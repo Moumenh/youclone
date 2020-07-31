@@ -1,7 +1,10 @@
 import React from 'react';
 import moment from 'moment';
 
-const VideoItem = ({video}) => {
+const VideoItem = ({video, match}) => {
+
+
+    console.log(match)
 
     var minutes = Math.floor(video.duration / 60);
     var seconds = Math.floor(video.duration - minutes * 60);
@@ -9,7 +12,7 @@ const VideoItem = ({video}) => {
     return ( 
         <a href={`video/${video._id}`}>
         <div className='video-card'>
-            <img className='thumbnail' src={`http://localhost:5000/${video.thumbnail}`} alt='thumbnail' />
+            <img className='thumbnail' src={`https://m0moooztube.herokuapp.com/${video.thumbnail}`} alt='thumbnail' />
             <div className='video-footer'>
                 <img src={`${video.writer.image}`} alt='userprofile' className='image' />
                 <div className='video-info'>
