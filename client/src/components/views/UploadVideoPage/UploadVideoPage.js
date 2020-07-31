@@ -77,7 +77,7 @@ const UploadVideoPage = (props) => {
             thumbnail: Thumbnail
         }
 
-        axios.post('http://localhost:5000/api/video/uploadVideo', variables)
+        axios.post('/api/video/uploadVideo', variables)
             .then(({data : {success}}) => {
                 if (success) {
                     alert('video Uploaded Successfully')
@@ -97,7 +97,7 @@ const UploadVideoPage = (props) => {
         console.log(files)
         formData.append('file', files[0])
 
-        axios.post('http://localhost:5000/api/video/uploadfiles', formData , config)
+        axios.post('/api/video/uploadfiles', formData , config)
         .then( ({ data : {success, filePath, fileName} }) => {
             
             if(success){
@@ -108,7 +108,7 @@ const UploadVideoPage = (props) => {
                 }
                 setFilePath(filePath)
                 
-                axios.post('http://localhost:5000/api/video/thumbnail', variable)
+                axios.post('/api/video/thumbnail', variable)
                 .then( ({ data })=> {
                     if(data.success){
                         setDuration(data.fileDuration)
@@ -153,7 +153,7 @@ const UploadVideoPage = (props) => {
 
                 {Thumbnail !== "" &&
                     <div>
-                        <img src={`http://localhost:5000/${Thumbnail}`} alt="haha" />
+                        <img src={`https://m0moooztube.herokuapp.com/${Thumbnail}`} alt="haha" />
                     </div>
                 }
             </div>
