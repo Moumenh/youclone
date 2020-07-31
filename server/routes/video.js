@@ -2,10 +2,10 @@ const express = require('express');
 const router = express.Router();
 const multer = require('multer')
 var ffmpeg = require('fluent-ffmpeg')
-const { User } = require("../models/User");
+
 const { Video } = require("../models/Video")
 const { auth } = require("../middleware/auth");
-const { default: VideoCard } = require('../../client/src/components/views/LandingPage/VideoCard');
+
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
