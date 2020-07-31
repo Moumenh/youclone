@@ -15,7 +15,7 @@ const DetailVideoPage = (props) => {
     }
 
     useEffect(() => {
-        axios.post('http://localhost:5000/api/video/getVideo', videoVariable)
+        axios.post('/api/video/getVideo', videoVariable)
         .then(({data:{success , video}}) => {
             if(success) {
                 

@@ -5,7 +5,7 @@ function SideVideo() {
     const [SideVideos, setSideVideos] = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:5000/api/video/getVideos')
+        axios.get('/api/video/getVideos')
             .then(response => {
                 if (response.data.success) {
                     

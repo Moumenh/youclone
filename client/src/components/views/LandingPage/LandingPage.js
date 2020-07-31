@@ -14,7 +14,7 @@ function LandingPage() {
     const [Videos, setVideos] = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:5000/api/video/getVideos')
+        axios.get('/api/video/getVideos')
         .then( ({data : { success , videos }}) => {
             if(success) {
                 setVideos(videos)

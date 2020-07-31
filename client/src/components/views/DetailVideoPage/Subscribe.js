@@ -16,7 +16,7 @@ const Subscribe = ({userTo, userFrom}) => {
         if(subscribed){
             //Already subbed
 
-            axios.post('http://localhost:5000/api/subscribe/unsubscribe',subscribeVariables)
+            axios.post('/api/subscribe/unsubscribe',subscribeVariables)
             .then ( res => {
                 if(res.data.success) {
                     setSubscribeNumber( subscribeNumber - 1 )
@@ -28,7 +28,7 @@ const Subscribe = ({userTo, userFrom}) => {
 
         } else {
             // not subbed
-            axios.post('http://localhost:5000/api/subscribe/subscribe',subscribeVariables)
+            axios.post('/api/subscribe/subscribe',subscribeVariables)
             .then ( res => {
                 if(res.data.success) {
                     setSubscribeNumber( subscribeNumber + 1 )
@@ -46,7 +46,7 @@ const Subscribe = ({userTo, userFrom}) => {
             userTo,
             userFrom
          } 
-        axios.post('http://localhost:5000/api/subscribe/subscribeNumber', subscribeNumberVariables)
+        axios.post('/api/subscribe/subscribeNumber', subscribeNumberVariables)
         .then( res => {
             if(res.data.success){
                 console.log(res.data.subscribeNumber)
@@ -56,7 +56,7 @@ const Subscribe = ({userTo, userFrom}) => {
             }
         })
 
-        axios.post( 'http://localhost:5000/api/subscribe/subscribed', subscribeNumberVariables )
+        axios.post( '/api/subscribe/subscribed', subscribeNumberVariables )
         .then( res => {
             if(res.data.success){
                 console.log(res.data.subscribed)
