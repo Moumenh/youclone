@@ -1,10 +1,11 @@
 import React from 'react';
 import moment from 'moment';
 
-const VideoItem = ({video, match}) => {
+
+const VideoItem = ({video}) => {
 
 
-    console.log(match)
+    
 
     var minutes = Math.floor(video.duration / 60);
     var seconds = Math.floor(video.duration - minutes * 60);
